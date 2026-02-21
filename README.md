@@ -1,4 +1,4 @@
-# HyperV_Gentoo_init.d_script
+# app-emulation/hyperv-daemon
 This is an init.d script for Hyper-V daemon that is in tools/hv in the Linux Kernel.
 
 # Why
@@ -16,8 +16,10 @@ I wrote this because there was no init script for the Hyper-V daemon
 * make
 * cd tools/hv
 * make install
-* copy gentoo/etc/init.d/hv_kvp_daemon to /etc/init.d/
-* chmod +x /etc/init.d/hv_kvp_daemon
+* Install the files in the gentoo folder by
+  * Coping the files, or
+  * Use the https://github.com/dl200010/dl-overlay portage overlay and "emerge app-emulation/hyperv-daemon".
+    * This will install the dependencies above.
 * rc-update add hv_kvp_daemon default
 * /etc/init.d/hv_kvp_daemon start
 
