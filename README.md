@@ -19,7 +19,7 @@ I wrote this because there was no init script for the Hyper-V daemon
 * Install the files in the gentoo folder by
   * Coping the files, or
   * Use the https://github.com/dl200010/dl-overlay portage overlay and "emerge app-emulation/hyperv-daemon".
-    * This will install the dependencies above.
+    * This will <ins>***NOT***</ins> install the dependencies above.
 * rc-update add hv_kvp_daemon default
 * /etc/init.d/hv_kvp_daemon start
 
