@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+command="/usr/sbin/hv_kvp_daemon"
+pidfile="/run/hv_kvp_daemon.pid"
+name="hv_kvp_daemon"
+
+depend() {
+    need net
+}
+
+start_pre() {
+    checkpath --directory --mode 0755 /run
+}
+
+start() {
+    ebegin "Starting ${name}"
+    start-stop-daemon --start --pidfile ${pidfile} --exec ${command}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping ${name}"
+    start-stop-daemon --stop --pidfile ${pidfile}
+    eend $?
+}
